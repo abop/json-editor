@@ -91,8 +91,8 @@ JSONEditor.defaults.editors.upload = JSONEditor.AbstractEditor.extend({
           if(self.parent) self.parent.onChildEditorChange(self);
           else self.jsoneditor.onChange();
 
-          if (self.progressBar) self.preview.removeChild(self.progressBar);
-          uploadButton.removeAttribute("disabled");
+          self.uploader.value = '';
+          self.preview.innerHTML = '';
         },
         failure: function(error) {
           self.theme.addInputError(self.uploader, error);
