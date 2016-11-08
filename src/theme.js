@@ -344,6 +344,7 @@ JSONEditor.AbstractTheme = Class.extend({
   },
   createImageLink: function(holder,link,image) {
     holder.appendChild(link);
+    image.style['max-width'] = '100%';
     link.appendChild(image);
   }
 });

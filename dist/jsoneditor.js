@@ -5890,7 +5890,7 @@ JSONEditor.defaults.editors.upload = JSONEditor.AbstractEditor.extend({
     }
 
     this.preview.innerHTML += '<br>';
-    var uploadButton = this.getButton('Upload', 'upload', 'Upload');
+    var uploadButton = this.getButton(this.translate('button_upload'), 'upload', this.translate('button_upload'));
     this.preview.appendChild(uploadButton);
     uploadButton.addEventListener('click',function(event) {
       event.preventDefault();
@@ -5910,6 +5910,7 @@ JSONEditor.defaults.editors.upload = JSONEditor.AbstractEditor.extend({
           if(self.parent) self.parent.onChildEditorChange(self);
           else self.jsoneditor.onChange();
 
+          self.uploader.value = '';
           self.preview.innerHTML = '';
         },
         failure: function(error) {
@@ -6454,6 +6455,7 @@ JSONEditor.AbstractTheme = Class.extend({
   },
   createImageLink: function(holder,link,image) {
     holder.appendChild(link);
+    image.style['max-width'] = '100%';
     link.appendChild(image);
   }
 });
@@ -7865,7 +7867,11 @@ JSONEditor.defaults.languages.en = {
   /**
     * Title on Expand buttons
     */
-  button_expand: "Expand"
+  button_expand: "Expand",
+  /**
+   * Title on Upload buttons
+   */
+  button_upload: "Upload"
 };
 
 // Miscellaneous Plugin Settings

@@ -201,7 +201,11 @@ JSONEditor.defaults.languages.en = {
   /**
     * Title on Expand buttons
     */
-  button_expand: "Expand"
+  button_expand: "Expand",
+  /**
+   * Title on Upload buttons
+   */
+  button_upload: "Upload"
 };
 
 // Miscellaneous Plugin Settings
