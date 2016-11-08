@@ -61,13 +61,32 @@ module.exports = function(grunt) {
 
           // End the closure
           'src/outro.js'
-        ],
+        ]
+      }
+    },
+    copy: {
+      lang: {
+        files: [
+          {
+            expand: true,
+            src: ['**.js'],
+            cwd: 'src/lang',
+            dest: 'dist/lang/'
+          }
+        ]
       }
     },
     uglify: {
       dist: {
         src: 'dist/jsoneditor.js',
         dest: 'dist/jsoneditor.min.js'
+      },
+      lang: {
+        expand: true,
+        src: '*.js',
+        cwd: 'dist/lang',
+        dest: 'dist/lang/',
+        ext: '.min.js'
       },
       options: {
         preserveComments: 'some',
@@ -118,6 +137,9 @@ module.exports = function(grunt) {
         // Set the defaults
         'src/defaults.js',
 
+        // The language files
+        '/src/lang/*.js',
+
         // Wrapper for $.fn style initialization
         'src/jquery.js'
       ],
@@ -133,12 +155,13 @@ module.exports = function(grunt) {
   });
 
   // These plugins provide necessary tasks.
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat');
 
   // Default task.
-  grunt.registerTask('default', ['jshint:beforeconcat','concat','jshint:afterconcat','uglify']);
+  grunt.registerTask('default',['jshint:beforeconcat','concat','jshint:afterconcat','copy','uglify']);
 
 };
