@@ -84,6 +84,9 @@ module.exports = function(grunt) {
       lang: {
         expand: true,
         src: '*.js',
+        filter: function(src) {
+          return !(src.slice(-'.min.js'.length) == '.min.js');
+        },
         cwd: 'dist/lang',
         dest: 'dist/lang/',
         ext: '.min.js'
