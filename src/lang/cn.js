@@ -3,15 +3,15 @@
  * Created by goofy on 2016/11/8.
  */
 JSONEditor.defaults.languages.cn = {
-  error_notset: "Property must be set",
+  error_notset: "必须设置属性值",
   /**
    * When a string must not be empty
    */
-  error_notempty: "Value required",
+  error_notempty: "该字段不能为空",
   /**
    * When a value is not one of the enumerated values
    */
-  error_enum: "Value must be one of the enumerated values",
+  error_enum: "必须选择枚举值",
   /**
    * When a value doesn't validate any schema of a 'anyOf' combination
    */
@@ -33,7 +33,7 @@ JSONEditor.defaults.languages.cn = {
    * When a value does not match the given type
    * @variables This key takes one variable: The type the value should be of
    */
-  error_type: "Value must be of type {{0}}",
+  error_type: "值必须是 {{0}} 类型",
   /**
    *  When the value validates one of the disallowed types
    */
@@ -52,27 +52,27 @@ JSONEditor.defaults.languages.cn = {
    * When a value is greater than it's supposed to be (exclusive)
    * @variables This key takes one variable: The maximum
    */
-  error_maximum_excl: "Value must be less than {{0}}",
+  error_maximum_excl: "必须小于 {{0}}",
   /**
    * When a value is greater than it's supposed to be (inclusive
    * @variables This key takes one variable: The maximum
    */
-  error_maximum_incl: "Value must be at most {{0}}",
+  error_maximum_incl: "不能大于 {{0}}",
   /**
    * When a value is lesser than it's supposed to be (exclusive)
    * @variables This key takes one variable: The minimum
    */
-  error_minimum_excl: "Value must be greater than {{0}}",
+  error_minimum_excl: "必须大于 {{0}}",
   /**
    * When a value is lesser than it's supposed to be (inclusive)
    * @variables This key takes one variable: The minimum
    */
-  error_minimum_incl: "Value must be at least {{0}}",
+  error_minimum_incl: "不能小于 {{0}}",
   /**
    * When a value have too many characters
    * @variables This key takes one variable: The maximum character count
    */
-  error_maxLength: "Value must be at most {{0}} characters long",
+  error_maxLength: "最多 {{0}} 个字符",
   /**
    * When a value does not have enough characters
    * @variables This key takes one variable: The minimum character count
@@ -81,50 +81,50 @@ JSONEditor.defaults.languages.cn = {
   /**
    * When a value does not match a given pattern
    */
-  error_pattern: "Value must match the pattern {{0}}",
+  error_pattern: "必须符合正则 {{0}}",
   /**
    * When an array has additional items whereas it is not supposed to
    */
-  error_additionalItems: "No additional items allowed in this array",
+  error_additionalItems: "不允许添加项目",
   /**
    * When there are to many items in an array
    * @variables This key takes one variable: The maximum item count
    */
-  error_maxItems: "Value must have at most {{0}} items",
+  error_maxItems: "最多添加 {{0}} 项",
   /**
    * When there are not enough items in an array
    * @variables This key takes one variable: The minimum item count
    */
-  error_minItems: "Value must have at least {{0}} items",
+  error_minItems: "至少需要 {{0}} 项",
   /**
    * When an array is supposed to have unique items but has duplicates
    */
-  error_uniqueItems: "Array must have unique items",
+  error_uniqueItems: "不能有重复项",
   /**
    * When there are too many properties in an object
    * @variables This key takes one variable: The maximum property count
    */
-  error_maxProperties: "Object must have at most {{0}} properties",
+  error_maxProperties: "最多 {{0}} 个属性",
   /**
    * When there are not enough properties in an object
    * @variables This key takes one variable: The minimum property count
    */
-  error_minProperties: "Object must have at least {{0}} properties",
+  error_minProperties: "至少 {{0}} 个属性",
   /**
    * When a required property is not defined
    * @variables This key takes one variable: The name of the missing property
    */
-  error_required: "Object is missing the required property '{{0}}'",
+  error_required: "属性 '{{0}}' 必填",
   /**
    * When there is an additional property is set whereas there should be none
    * @variables This key takes one variable: The name of the additional property
    */
-  error_additional_properties: "No additional properties allowed, but property {{0}} is set",
+  error_additional_properties: "不能添加额外的属性, 但 {{0}} 被设置",
   /**
    * When a dependency is not resolved
    * @variables This key takes one variable: The name of the missing property for the dependency
    */
-  error_dependency: "Must have property {{0}}",
+  error_dependency: "必须有 {{0}} 属性",
   /**
    * Text on Delete All buttons
    */
@@ -176,5 +176,13 @@ JSONEditor.defaults.languages.cn = {
   /**
    * Title on Upload buttons
    */
-  button_upload: "上传"
+  button_upload: "上传",
+  /**
+   * Text in Edit Json buttons
+   */
+  button_edit_json: "编辑 JSON",
+  /**
+   * Title in Edit Json buttons
+   */
+  button_edit_json_title: "编辑 JSON"
 };

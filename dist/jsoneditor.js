@@ -2779,7 +2779,7 @@ JSONEditor.defaults.editors.object = JSONEditor.AbstractEditor.extend({
       }
 
       // Edit JSON Button
-      this.editjson_button = this.getButton('JSON','edit','Edit JSON');
+      this.editjson_button = this.getButton(this.translate('button_edit_json'),'edit',this.translate('button_edit_json_title'));
       this.editjson_button.addEventListener('click',function(e) {
         e.preventDefault();
         e.stopPropagation();
@@ -7677,17 +7677,17 @@ JSONEditor.defaults.options = {};
 JSONEditor.defaults.translate = function(key, variables) {
   var lang = JSONEditor.defaults.languages[JSONEditor.defaults.language];
   if(!lang) throw "Unknown language "+JSONEditor.defaults.language;
-  
+
   var string = lang[key] || JSONEditor.defaults.languages[JSONEditor.defaults.default_language][key];
-  
+
   if(typeof string === "undefined") throw "Unknown translate string "+key;
-  
+
   if(variables) {
     for(var i=0; i<variables.length; i++) {
       string = string.replace(new RegExp('\\{\\{'+i+'}}','g'),variables[i]);
     }
   }
-  
+
   return string;
 };
 
@@ -7871,7 +7871,15 @@ JSONEditor.defaults.languages.en = {
   /**
    * Title on Upload buttons
    */
-  button_upload: "Upload"
+  button_upload: "Upload",
+  /**
+   * Text in Edit Json buttons
+   */
+  button_edit_json: "Edit JSON",
+  /**
+   * Title in Edit Json buttons
+   */
+  button_edit_json_title: "Edit JSON"
 };
 
 // Miscellaneous Plugin Settings
@@ -7886,7 +7894,7 @@ JSONEditor.plugins = {
 
   },
   select2: {
-    
+
   },
   selectize: {
   }
